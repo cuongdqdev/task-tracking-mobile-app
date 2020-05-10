@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Ứng dụng theo dõi công việc</string>
+
+    <array name="statues">
+        <item>Khởi tạo</item>
+        <item>Đang làm</item>
+        <item>Hoàn thành</item>
+    </array>
+
+    <array name="statusFilter">
+        <item>Tất cả</item>
+        <item>Khởi tạo</item>
+        <item>Đang làm</item>
+        <item>Hoàn thành</item>
+    </array>
+    <string name="title_home">TRANG CHỦ</string>
+    <string name="title_add_task">THÊM MỚI</string>
+    <string name="title_list_task">DANH SÁCH</string>
+    <string name="title_add_new_task">THÊM MỚI NHIỆM VỤ</string>
+    <string name="message">Việc hôm nay (cứ) chớ để ngày mai \n- Đừng để sự trì hoãn làm hỏng mọi việc</string>
+</resources>

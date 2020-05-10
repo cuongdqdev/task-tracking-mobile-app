@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvEditTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center_horizontal"
+        android:text="CHỈNH SỬA NHIỆM VỤ"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:id="@+id/tvTaskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:paddingLeft="6dp"
+        android:text="Nhiệm vụ" />
+
+    <EditText
+        android:id="@+id/edtTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="@drawable/border"
+        android:gravity="top|left"
+        android:hint="Nhập vào tên nhiệm vụ"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:paddingLeft="6dp"
+        android:text="Chọn trạng thái nhiệm vụ" />
+
+    <Spinner
+        android:id="@+id/spnStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:background="@drawable/border"
+        android:entries="@array/statues" />
+
+    <TextView
+        android:id="@+id/tvTaskDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_button"
+        android:paddingLeft="6dp"
+        android:text="Mô tả" />
+
+    <EditText
+        android:id="@+id/edtTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border"
+        android:gravity="top"
+        android:hint="Nhập vào mô tả nhiệm vụ"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:id="@+id/btnEditTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="CẬP NHẬT" />
+
+</LinearLayout>
