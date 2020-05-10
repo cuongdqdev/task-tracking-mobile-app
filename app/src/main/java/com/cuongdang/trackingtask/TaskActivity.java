@@ -100,7 +100,7 @@ public class TaskActivity extends AppCompatActivity {
 
     private void searchTaskFromDatabase(String status, String name) {
         Cursor cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks WHERE status like ? OR name like ?",
-                new String[]{status, name} );
+                new String[]{status, name});
         if (cursorTasks.moveToFirst()) {
             taskList.clear();
             do {
