@@ -87,7 +87,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="330dp"
+            android:fillViewport="true">
 
             <ListView
                 android:id="@+id/lvTasks"
