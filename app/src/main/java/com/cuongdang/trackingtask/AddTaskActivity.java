@@ -39,6 +39,17 @@ public class AddTaskActivity extends AppCompatActivity {
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
         createTaskTable();
 
+    }
+
+    private void setControl() {
+        edtTaskName = findViewById(R.id.edtTaskName);
+        edtTaskDescription = findViewById(R.id.edtTaskDescription);
+        spnStatus = findViewById(R.id.spnStatus);
+        btnAddTask = findViewById(R.id.btnAddTask);
+    }
+
+    private void setEvent() {
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -56,16 +67,7 @@ public class AddTaskActivity extends AppCompatActivity {
                 return true;
             }
         });
-    }
 
-    private void setControl() {
-        edtTaskName = findViewById(R.id.edtTaskName);
-        edtTaskDescription = findViewById(R.id.edtTaskDescription);
-        spnStatus = findViewById(R.id.spnStatus);
-        btnAddTask = findViewById(R.id.btnAddTask);
-    }
-
-    private void setEvent() {
         btnAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

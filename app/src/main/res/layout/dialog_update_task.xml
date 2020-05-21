@@ -35,7 +35,8 @@
         android:gravity="top|left"
         android:hint="Nhập vào tên nhiệm vụ"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp" />
+        android:paddingTop="10dp"
+        android:scrollbars = "vertical" />
 
     <TextView
         android:id="@+id/tvStatus"
@@ -73,7 +74,8 @@
         android:gravity="top"
         android:hint="Nhập vào mô tả nhiệm vụ"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp" />
+        android:paddingTop="10dp"
+        android:scrollbars = "vertical" />
 
     <Button
         android:id="@+id/btnEditTask"

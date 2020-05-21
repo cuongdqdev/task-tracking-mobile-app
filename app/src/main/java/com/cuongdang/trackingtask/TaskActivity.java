@@ -24,6 +24,7 @@ import es.dmoral.toasty.Toasty;
 
 public class TaskActivity extends AppCompatActivity {
 
+    private static int numberOfResult = 0;
     List<Task> taskList;
     SQLiteDatabase mDatabase;
     ListView lvTasks;
@@ -42,15 +43,6 @@ public class TaskActivity extends AppCompatActivity {
         showTaskFromDatabase();
         setEvent();
 
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = edtSearch.getText().toString();
-                String status = spnStatus.getSelectedItem().toString();
-                searchTaskFromDatabase(name, status);
-                Toasty.success(TaskActivity.this, "TÌM KIẾM NHIỆM VỤ THÀNH CÔNG", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void setControl() {
@@ -76,6 +68,16 @@ public class TaskActivity extends AppCompatActivity {
                         break;
                 }
                 return true;
+            }
+        });
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = edtSearch.getText().toString();
+                String status = spnStatus.getSelectedItem().toString();
+                searchTaskFromDatabase(name, status);
+                Toasty.success(TaskActivity.this, "TÌM KIẾM: " + numberOfResult + " KẾT QUẢ", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -120,6 +122,7 @@ public class TaskActivity extends AppCompatActivity {
             } while (cursorTasks.moveToNext());
         }
         cursorTasks.close();
+        numberOfResult = taskList.size();
         adapter = new TaskAdapter(this, R.layout.list_layout_task, taskList, mDatabase);
         lvTasks.setAdapter(adapter);
     }
