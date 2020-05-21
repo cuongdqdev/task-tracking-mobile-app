@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,9 @@ import java.util.List;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import es.dmoral.toasty.Toasty;
 
+
 public class TaskAdapter extends ArrayAdapter<Task> {
+
     Context mCtx;
     int listLayoutRes;
     List<Task> taskList;
@@ -53,6 +56,15 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         tvTaskName.setText(task.getName());
         tvTaskDescription.setText(task.getDescription());
         tvStatus.setText(task.getStatus());
+        if (task.getStatus().equals("Khởi tạo")) {
+            tvStatus.setTextColor(Color.GREEN);
+        }
+        if (task.getStatus().equals("Đang làm")) {
+            tvStatus.setTextColor(Color.YELLOW);
+        }
+        if (task.getStatus().equals("Hoàn thành")) {
+            tvStatus.setTextColor(Color.RED);
+        }
         tvCreatedDate.setText(task.getCreatedDate());
 
         Button btnDeleteTask = view.findViewById(R.id.btnDeleteTask);
@@ -76,8 +88,8 @@ public class TaskAdapter extends ArrayAdapter<Task> {
                             public void onClick(SweetAlertDialog sDialog) {
                                 String sql = "DELETE FROM tasks WHERE id = ?";
                                 mDatabase.execSQL(sql, new Integer[]{task.getId()});
-                                reloadTasksFromDatabase();
                                 Toasty.warning(mCtx, "XÓA NHIỆM VỤ THÀNH CÔNG.", Toast.LENGTH_SHORT, true).show();
+                                reloadTasksFromDatabase();
                                 sDialog.dismissWithAnimation();
                             }
                         })
@@ -153,8 +165,8 @@ public class TaskAdapter extends ArrayAdapter<Task> {
 
     private void reloadTasksFromDatabase() {
         Cursor cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks", null);
+        taskList.clear();
         if (cursorTasks.moveToFirst()) {
-            taskList.clear();
             do {
                 taskList.add(new Task(
                         cursorTasks.getInt(0),

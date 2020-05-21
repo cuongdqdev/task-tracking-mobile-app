@@ -47,7 +47,7 @@ public class TaskActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = edtSearch.getText().toString();
                 String status = spnStatus.getSelectedItem().toString();
-                searchTaskFromDatabase(status, name);
+                searchTaskFromDatabase(name, status);
                 Toasty.success(TaskActivity.this, "TÌM KIẾM NHIỆM VỤ THÀNH CÔNG", Toast.LENGTH_SHORT).show();
             }
         });
@@ -98,11 +98,17 @@ public class TaskActivity extends AppCompatActivity {
         lvTasks.setAdapter(adapter);
     }
 
-    private void searchTaskFromDatabase(String status, String name) {
-        Cursor cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks WHERE status like ? OR name like ?",
-                new String[]{status, name});
+    private void searchTaskFromDatabase(String name, String status) {
+        Cursor cursorTasks = null;
+        if (status.equals("Tất cả")) {
+            cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks WHERE name like ?",
+                    new String[]{"%" + name + "%"});
+        } else {
+            cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks WHERE name like ? and status like ?",
+                    new String[]{"%" + name + "%", status});
+        }
+        taskList.clear();
         if (cursorTasks.moveToFirst()) {
-            taskList.clear();
             do {
                 taskList.add(new Task(
                         cursorTasks.getInt(0),

@@ -91,7 +91,8 @@ public class AddTaskActivity extends AppCompatActivity {
                     "(?, ?, ?, ?);";
 
             mDatabase.execSQL(insertSQL, new String[]{taskName, status, createdDate, taskDescription});
-
+            edtTaskName.setText("");
+            edtTaskDescription.setText("");
             Toasty.success(this, "THÊM NHIỆM VỤ THÀNH CÔNG", Toast.LENGTH_SHORT).show();
         }
 

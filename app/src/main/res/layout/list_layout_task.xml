@@ -31,7 +31,8 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_button"
             android:text="Khởi tạo"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvTaskDescription"
@@ -64,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
-            android:background="@drawable/rounded_button"
+            android:background="@drawable/rounded_edit_button"
             android:text="Chỉnh sửa" />
 
         <Button
@@ -72,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
-            android:background="@drawable/rounded_button"
+            android:background="@drawable/rounded_delete_button"
             android:text="Xóa" />
 
     </LinearLayout>
