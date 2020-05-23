@@ -1,4 +1,4 @@
-package com.cuongdang.trackingtask;
+package com.cuongdang.trackingtask.model;
 
 public class Task {
     private int id;

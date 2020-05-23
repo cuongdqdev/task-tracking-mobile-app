@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    tools:context=".HomeActivity">
+    android:background="@drawable/rounded_layout"
+    tools:context=".activity.HomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 app:itemBackground="@color/colorPrimary"
-                app:itemIconTint="@android:color/white"
+                app:itemIconTint="@android:color/holo_red_light"
                 app:itemTextColor="@android:color/white"
                 app:menu="@menu/bottom_nav_menu" />
         </RelativeLayout>

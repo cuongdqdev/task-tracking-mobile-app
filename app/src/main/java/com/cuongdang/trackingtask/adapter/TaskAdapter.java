@@ -1,4 +1,4 @@
-package com.cuongdang.trackingtask;
+package com.cuongdang.trackingtask.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -17,6 +17,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.cuongdang.trackingtask.R;
+import com.cuongdang.trackingtask.model.Task;
 
 import java.util.List;
 
@@ -46,13 +49,16 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(listLayoutRes, null);
 
+        // getting employee of the specified position
         final Task task = taskList.get(position);
 
+        //getting views
         TextView tvTaskName = view.findViewById(R.id.tvTaskName);
         TextView tvTaskDescription = view.findViewById(R.id.tvTaskDescription);
         TextView tvStatus = view.findViewById(R.id.tvStatus);
         TextView tvCreatedDate = view.findViewById(R.id.tvCreatedDate);
 
+        // add data to views
         tvTaskName.setText(task.getName());
         tvTaskDescription.setText(task.getDescription());
         tvStatus.setText(task.getStatus());

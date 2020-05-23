@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTaskActivity">
+    android:background="@drawable/rounded_layout"
+    tools:context=".activity.AddTaskActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,12 +72,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_button"
+            android:drawableLeft="@drawable/ic_add_circle_black_24dp"
             android:text="THÊM NHIỆM VỤ" />
 
     </LinearLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -86,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:itemBackground="@color/colorPrimary"
-            app:itemIconTint="@android:color/white"
+            app:itemIconTint="@android:color/holo_red_light"
             app:itemTextColor="@android:color/white"
             app:menu="@menu/bottom_nav_menu" />
     </RelativeLayout>

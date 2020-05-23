@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rounded_layout"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -36,7 +37,7 @@
         android:hint="Nhập vào tên nhiệm vụ"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:scrollbars = "vertical" />
+        android:scrollbars="vertical" />
 
     <TextView
         android:id="@+id/tvStatus"
@@ -75,13 +76,14 @@
         android:hint="Nhập vào mô tả nhiệm vụ"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:scrollbars = "vertical" />
+        android:scrollbars="vertical" />
 
     <Button
         android:id="@+id/btnEditTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
+        android:drawableLeft="@drawable/ic_autorenew_black_24dp"
         android:text="CẬP NHẬT" />
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.cuongdang.trackingtask;
+package com.cuongdang.trackingtask.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cuongdang.trackingtask.R;
+import com.cuongdang.trackingtask.adapter.TaskAdapter;
+import com.cuongdang.trackingtask.model.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -40,6 +43,8 @@ public class TaskActivity extends AppCompatActivity {
         setControl();
         taskList = new ArrayList<>();
         mDatabase = openOrCreateDatabase(AddTaskActivity.DATABASE_NAME, MODE_PRIVATE, null);
+
+        // Display all employees in the list
         showTaskFromDatabase();
         setEvent();
 
