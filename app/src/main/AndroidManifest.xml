@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".activity.AddTaskActivity" />
         <activity android:name=".activity.TaskActivity" />
+        
+        <receiver android:name=".broadcast.ReminderBroadcast" />
     </application>
 
 </manifest>

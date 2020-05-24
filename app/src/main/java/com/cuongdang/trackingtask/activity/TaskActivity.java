@@ -88,7 +88,7 @@ public class TaskActivity extends AppCompatActivity {
     }
 
     private void showTaskFromDatabase() {
-        Cursor cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks", null);
+        Cursor cursorTasks = mDatabase.rawQuery("SELECT * FROM tasks ORDER BY id DESC", null);
         if (cursorTasks.moveToFirst()) {
             do {
                 taskList.add(new Task(

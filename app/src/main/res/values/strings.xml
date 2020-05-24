@@ -18,4 +18,6 @@
     <string name="title_list_task">DANH SÁCH</string>
     <string name="title_add_new_task">THÊM MỚI NHIỆM VỤ</string>
     <string name="message">Việc hôm nay (cứ) chớ để ngày mai \n- Đừng để sự trì hoãn làm hỏng mọi việc</string>
+    <string name="tv_notification">CÀI ĐẶT THÔNG BÁO</string>
+    <string name="title_reminder_3_hours">Nhắc sau 3 giờ</string>
 </resources>
